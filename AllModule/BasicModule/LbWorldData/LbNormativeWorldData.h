@@ -1,12 +1,13 @@
-#pragma once
-#include "LbWorldData_Abstract.h"
-#include <QDebug>
+#pragma 
 
 /**
 * version: 1.0
 * class name: LbNormativeWorldData
 * descrition: 标准世界数据类。用于存储世界的所有数据。
 */
+
+#include "LbWorldData_Abstract.h"
+#include <QDebug>
 
 class LbNormativeWorldData :
     public LbWorldData_Abstract

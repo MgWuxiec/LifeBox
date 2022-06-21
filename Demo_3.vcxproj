@@ -58,6 +58,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\HaaaaaalloMg\Workplace\LifeBox\Project\Demo_3\AllModule;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -85,17 +93,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <QtRcc Include="BasicModule\MainWindow.qrc" />
-    <QtUic Include="BasicModule\MainWindow.ui" />
-    <QtMoc Include="BasicModule\MainWindow.h" />
-    <ClCompile Include="BasicModule\MainWindow.cpp" />
-    <ClCompile Include="BasicModule\LbWorldData\LbWorldData_Abstract.cpp" />
-    <ClCompile Include="BasicModule\LbWorldData\LbNormativeWorldData.cpp" />
+    <ClCompile Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.cpp" />
+    <ClCompile Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.cpp" />
+    <QtRcc Include="AllModule\BasicModule\MainWindow.qrc" />
+    <QtUic Include="AllModule\BasicModule\MainWindow.ui" />
+    <QtMoc Include="AllModule\BasicModule\MainWindow.h" />
+    <ClCompile Include="AllModule\BasicModule\MainWindow.cpp" />
+    <ClCompile Include="AllModule\BasicModule\LbWorldData\LbWorldData_Abstract.cpp" />
+    <ClCompile Include="AllModule\BasicModule\LbWorldData\LbNormativeWorldData.cpp" />
+    <ClCompile Include="AllModule\SceneModule\LbWorldScene\LbWorldScene_Abstract.cpp" />
+    <ClCompile Include="AllModule\SceneModule\LbWorldScene\LbNormativeWorldScene.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.ui" />
+    <QtUic Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.ui" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BasicModule\LbWorldData\LbWorldData_Abstract.h" />
-    <ClInclude Include="BasicModule\LbWorldData\LbNormativeWorldData.h" />
+    <ClInclude Include="AllModule\BasicModule\LbWorldData\LbWorldData_Abstract.h" />
+    <ClInclude Include="AllModule\BasicModule\LbWorldData\LbNormativeWorldData.h" />
+    <ClInclude Include="AllModule\SceneModule\LbWorldScene\LbWorldScene_Abstract.h" />
+    <ClInclude Include="AllModule\SceneModule\LbWorldScene\LbNormativeWorldScene.h" />
+    <QtMoc Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.h" />
+    <QtMoc Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

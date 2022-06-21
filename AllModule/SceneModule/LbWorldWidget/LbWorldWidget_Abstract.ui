@@ -1,0 +1,22 @@
+<UI version="4.0" >
+ <class>LbWorldWidget_AbstractClass</class>
+ <widget class="QWidget" name="LbWorldWidget_AbstractClass" >
+  <property name="objectName" >
+   <string notr="true">LbWorldWidget_AbstractClass</string>
+  </property>
+  <property name="geometry" >
+   <rect>
+	<x>0</x>
+	<y>0</y>
+	<width>600</width>
+	<height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>LbWorldWidget_Abstract</string>
+  </property>$centralwidget$
+ </widget>
+ <layoutDefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <connections/>
+</UI>

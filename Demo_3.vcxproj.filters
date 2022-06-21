@@ -23,16 +23,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="BasicModule\MainWindow.qrc">
+    <QtRcc Include="AllModule\BasicModule\MainWindow.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="BasicModule\MainWindow.ui">
+    <QtUic Include="AllModule\BasicModule\MainWindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtMoc Include="BasicModule\MainWindow.h">
+    <QtMoc Include="AllModule\BasicModule\MainWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClCompile Include="BasicModule\MainWindow.cpp">
+    <ClCompile Include="AllModule\BasicModule\MainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,19 +40,53 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BasicModule\LbWorldData\LbWorldData_Abstract.cpp">
+    <ClCompile Include="AllModule\BasicModule\LbWorldData\LbWorldData_Abstract.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BasicModule\LbWorldData\LbNormativeWorldData.cpp">
+    <ClCompile Include="AllModule\BasicModule\LbWorldData\LbNormativeWorldData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllModule\SceneModule\LbWorldScene\LbWorldScene_Abstract.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllModule\SceneModule\LbWorldScene\LbNormativeWorldScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BasicModule\LbWorldData\LbWorldData_Abstract.h">
+    <ClInclude Include="AllModule\BasicModule\LbWorldData\LbWorldData_Abstract.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BasicModule\LbWorldData\LbNormativeWorldData.h">
+    <ClInclude Include="AllModule\BasicModule\LbWorldData\LbNormativeWorldData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AllModule\SceneModule\LbWorldScene\LbWorldScene_Abstract.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllModule\SceneModule\LbWorldScene\LbNormativeWorldScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
