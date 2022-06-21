@@ -89,7 +89,13 @@
     <QtUic Include="BasicModule\MainWindow.ui" />
     <QtMoc Include="BasicModule\MainWindow.h" />
     <ClCompile Include="BasicModule\MainWindow.cpp" />
+    <ClCompile Include="BasicModule\LbWorldData\LbWorldData_Abstract.cpp" />
+    <ClCompile Include="BasicModule\LbWorldData\LbNormativeWorldData.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicModule\LbWorldData\LbWorldData_Abstract.h" />
+    <ClInclude Include="BasicModule\LbWorldData\LbNormativeWorldData.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
