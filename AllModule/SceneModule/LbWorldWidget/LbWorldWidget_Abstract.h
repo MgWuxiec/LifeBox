@@ -7,8 +7,10 @@
 */
 
 #include <QWidget>
+#include <QDebug>
 #include "ui_LbWorldWidget_Abstract.h"
 #include "BasicModule/LbWorldData/LbWorldData_Abstract.h"
+
 
 class LbWorldWidget_Abstract : public QWidget
 {

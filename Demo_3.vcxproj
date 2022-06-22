@@ -21,6 +21,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -95,14 +96,15 @@
   <ItemGroup>
     <ClCompile Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.cpp" />
     <ClCompile Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.cpp" />
-    <QtRcc Include="AllModule\BasicModule\MainWindow.qrc" />
-    <QtUic Include="AllModule\BasicModule\MainWindow.ui" />
-    <QtMoc Include="AllModule\BasicModule\MainWindow.h" />
-    <ClCompile Include="AllModule\BasicModule\MainWindow.cpp" />
+    <QtRcc Include="AllModule\BasicModule\MainWindow\MainWindow.qrc" />
+    <QtUic Include="AllModule\BasicModule\MainWindow\MainWindow.ui" />
+    <QtMoc Include="AllModule\BasicModule\MainWindow\MainWindow.h" />
+    <ClCompile Include="AllModule\BasicModule\MainWindow\MainWindow.cpp" />
     <ClCompile Include="AllModule\BasicModule\LbWorldData\LbWorldData_Abstract.cpp" />
     <ClCompile Include="AllModule\BasicModule\LbWorldData\LbNormativeWorldData.cpp" />
     <ClCompile Include="AllModule\SceneModule\LbWorldScene\LbWorldScene_Abstract.cpp" />
     <ClCompile Include="AllModule\SceneModule\LbWorldScene\LbNormativeWorldScene.cpp" />
+    <ClCompile Include="AllModule\SceneModule\LbBoundPoint\LbBoundPoint.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.ui" />
     <QtUic Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.ui" />
@@ -112,6 +114,7 @@
     <ClInclude Include="AllModule\BasicModule\LbWorldData\LbNormativeWorldData.h" />
     <ClInclude Include="AllModule\SceneModule\LbWorldScene\LbWorldScene_Abstract.h" />
     <ClInclude Include="AllModule\SceneModule\LbWorldScene\LbNormativeWorldScene.h" />
+    <QtMoc Include="AllModule\SceneModule\LbBoundPoint\LbBoundPoint.h" />
     <QtMoc Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.h" />
     <QtMoc Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.h" />
   </ItemGroup>

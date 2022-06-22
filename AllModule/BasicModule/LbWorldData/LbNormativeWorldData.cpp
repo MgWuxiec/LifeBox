@@ -10,7 +10,7 @@ LbNormativeWorldData::LbNormativeWorldData(int width, int height)
 LbNormativeWorldData::~LbNormativeWorldData()
 {
 	if (value != nullptr) {
-		delete value;
+		delete[] value;
 		value = nullptr;
 	}
 }
