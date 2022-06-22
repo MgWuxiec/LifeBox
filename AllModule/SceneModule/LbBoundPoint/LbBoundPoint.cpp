@@ -5,12 +5,19 @@ LbBoundPoint::LbBoundPoint(QWidget* parent, QPoint pos1, QPoint pos2)
 {
 	setRange(pos1, pos2);
 
-/*	connect(&sliderX, &QAbstractSlider::valueChanged, [=]() {
+	connect(&sliderX, &QAbstractSlider::valueChanged, [=]() {
 		parent->update();
 		});
 	connect(&sliderY, &QAbstractSlider::valueChanged, [=]() {
 		parent->update();
-		})*/;
+		});
+
+	sliderX.setOrientation(Qt::Horizontal);
+	sliderY.setOrientation(Qt::Vertical);
+
+	//³õÊ¼»¯Öµ
+	sliderX.setValue(-xMin);
+	sliderY.setValue(-yMin);
 }
 
 int LbBoundPoint::x()
@@ -33,12 +40,12 @@ void LbBoundPoint::setY(int value)
 	sliderY.setValue(value - yMin);
 }
 
-QAbstractSlider& LbBoundPoint::getSliderX()
+QScrollBar& LbBoundPoint::getSliderX()
 {
 	return sliderX;
 }
 
-QAbstractSlider& LbBoundPoint::getSliderY()
+QScrollBar& LbBoundPoint::getSliderY()
 {
 	return sliderY;
 }
@@ -54,16 +61,16 @@ void LbBoundPoint::setRange(QPoint pos1, QPoint pos2)
 		xMin = pos1.x();
 	}
 	if (pos1.y() > pos2.y()) {
-		xMax = pos1.y();
-		xMin = pos2.y();
+		yMax = pos1.y();
+		yMin = pos2.y();
 	}
 	else {
-		xMax = pos2.y();
-		xMin = pos1.y();
+		yMax = pos2.y();
+		yMin = pos1.y();
 	}
 
 	sliderX.setMinimum(0);
 	sliderX.setMaximum(xMax - xMin);
 	sliderY.setMinimum(0);
-	sliderY.setMaximum(yMax - xMin);
+	sliderY.setMaximum(yMax - yMin);
 }

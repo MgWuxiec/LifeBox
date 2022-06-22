@@ -11,16 +11,17 @@
 #include <QLayout>
 #include "ui_LbNormativeWorldWidget.h"
 #include "LbWorldWidget_Abstract.h"
+#include "SceneModule/LbBoundPoint/LbBoundPoint.h"
 
 const QSize DEFAULT_PIXEL_DIMENSION_OF_CELL(32, 32);
 const QPoint DEFAULT_WIDGET_ANCHOR(0, 0);
 const QColor DEFAULT_WIDGET_BACKGROUND_COLOR(0, 0, 0);
 const QColor DEFAULT_GRIDLINES_COLOR(30, 30, 30);
 const int DEFAULT_GRIDLINES_WIDTH = 1;
-const int LAYOUT_LEFT_MARGIN = 100;
-const int LAYOUT_RIFHT_MARGIN = 100;
-const int LAYOUT_TOP_MARGIN = 100;
-const int LAYOUT_BOTTOM_MARGIN = 100;
+const int LAYOUT_LEFT_MARGIN = 256;
+const int LAYOUT_RIFHT_MARGIN = 256;
+const int LAYOUT_TOP_MARGIN = 256;
+const int LAYOUT_BOTTOM_MARGIN = 256;
 
 class LbNormativeWorldWidget : public LbWorldWidget_Abstract
 {
@@ -50,4 +51,5 @@ protected:
 	Ui::LbNormativeWorldWidgetClass ui;
 
 	QSize pixelDimensionOfCell;
+	LbBoundPoint anchorWidget;
 };

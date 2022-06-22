@@ -7,35 +7,18 @@ LbNormativeWorldWidget::LbNormativeWorldWidget(
 	LbWorldData_Abstract* worldData
 )
 	: LbWorldWidget_Abstract(parent, worldData),
-      pixelDimensionOfCell(DEFAULT_PIXEL_DIMENSION_OF_CELL)
+      pixelDimensionOfCell(DEFAULT_PIXEL_DIMENSION_OF_CELL),
+      anchorWidget(
+          this,
+          QPoint(-LAYOUT_LEFT_MARGIN, -LAYOUT_TOP_MARGIN), 
+          QPoint(worldData->getWidth() * pixelDimensionOfCell.width() + LAYOUT_RIFHT_MARGIN, 
+                 worldData->getHeight()* pixelDimensionOfCell.height() + LAYOUT_BOTTOM_MARGIN)
+      )
 {
 	ui.setupUi(this);
 
-    //设置默认锚点
-    ui.widgetAnchorX->setValue(DEFAULT_WIDGET_ANCHOR.x());
-    ui.widgetAnchorY->setValue(DEFAULT_WIDGET_ANCHOR.y());
-
-    //初始化X、Y滚动条
-    connect(ui.widgetAnchorX, &QScrollBar::valueChanged, [=](){
-        update();
-        });
-    connect(ui.widgetAnchorY, &QScrollBar::valueChanged, [=]() {
-        update();
-        });
-
-    ui.widgetAnchorX->setMinimum(0);
-    ui.widgetAnchorX->setMaximum(worldData->getWidth() * pixelDimensionOfCell.width() + 
-                                 LAYOUT_LEFT_MARGIN +
-                                 LAYOUT_RIFHT_MARGIN);
-    ui.widgetAnchorX->setPageStep(pixelDimensionOfCell.width());
-    ui.widgetAnchorX->setSingleStep(pixelDimensionOfCell.width() / 2);
-
-    ui.widgetAnchorY->setMinimum(0);
-    ui.widgetAnchorY->setMaximum(worldData->getHeight() * pixelDimensionOfCell.height() +
-                                 LAYOUT_TOP_MARGIN +
-                                 LAYOUT_BOTTOM_MARGIN);
-    ui.widgetAnchorY->setPageStep(pixelDimensionOfCell.height());
-    ui.widgetAnchorY->setSingleStep(pixelDimensionOfCell.height() / 2);
+    ui.gridLayout->addWidget(&anchorWidget.getSliderX(), 1, 0);
+    ui.gridLayout->addWidget(&anchorWidget.getSliderY(), 0, 1);
 }
 
 LbNormativeWorldWidget::~LbNormativeWorldWidget()
@@ -65,14 +48,17 @@ void LbNormativeWorldWidget::paintEvent(QPaintEvent* event)
 
 void LbNormativeWorldWidget::mousePressEvent(QMouseEvent* event)
 {
+
 }
 
 void LbNormativeWorldWidget::mouseReleaseEvent(QMouseEvent* event)
 {
+
 }
 
 void LbNormativeWorldWidget::mouseMoveEvent(QMouseEvent* event)
 {
+
 }
 
 void LbNormativeWorldWidget::paintCells(QPaintEvent* event)
@@ -91,10 +77,31 @@ void LbNormativeWorldWidget::paintGrid(QPaintEvent* event)
 
     //2. 定义绘图的起点和终点，以scene为基坐标系
     QPoint start, end;
-    start.setX(-ui.widgetAnchorX->value() % pixelDimensionOfCell.width());
-    start.setY(-ui.widgetAnchorY->value() % pixelDimensionOfCell.height());
-    end.setX(this->width() + pixelDimensionOfCell.width() - this->width() % pixelDimensionOfCell.width());
-    end.setY(this->height() + pixelDimensionOfCell.height() - this->height() % pixelDimensionOfCell.height());
+    if (anchorWidget.x() >= 0) {
+        start.setX(-anchorWidget.x() % pixelDimensionOfCell.width());
+    }
+    else {
+        start.setX(-anchorWidget.x());
+    }
+    if (anchorWidget.y() >= 0) {
+        start.setY(-anchorWidget.y() % pixelDimensionOfCell.height());
+    }
+    else {
+        start.setY(-anchorWidget.y());
+    }
+
+    if (start.x() + pixelDimensionOfCell.width() * worldData->getWidth() >= this->width()) {
+        end.setX(this->width() + pixelDimensionOfCell.width() - this->width() % pixelDimensionOfCell.width());
+    }
+    else {
+        end.setX(this->width() + start.x() + pixelDimensionOfCell.width() * worldData->getWidth());
+    }
+    if (start.y() + pixelDimensionOfCell.height() * worldData->getHeight() >= this->height()) {
+        end.setY(this->height() + pixelDimensionOfCell.height() - this->height() % pixelDimensionOfCell.height());
+    }
+    else {
+        end.setY(this->height() + start.y() + pixelDimensionOfCell.height() * worldData->getHeight());
+    }
 
     //3. 开始绘图
     for (int i = start.x(); i < end.x(); i += pixelDimensionOfCell.width()) {

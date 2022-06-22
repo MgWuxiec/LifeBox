@@ -7,20 +7,21 @@
 */
 
 #include <QPoint>
-#include <QAbstractSlider>
-#include
+#include <QScrollBar>
+#include <QDebug>
 
-class LbBoundPoint
+class LbBoundPoint: public QObject
 {
 	Q_OBJECT
+
 public:
 	LbBoundPoint(QWidget* parent, QPoint pos1, QPoint pos2);
 	int x();
 	int y();
 	void setX(int value);
 	void setY(int value);
-	QAbstractSlider& getSliderX();
-	QAbstractSlider& getSliderY();
+	QScrollBar& getSliderX();
+	QScrollBar& getSliderY();
 	void setRange(QPoint pos1, QPoint pos2);
 
 protected:
@@ -29,6 +30,6 @@ protected:
 	int yMin;
 	int yMax;
 
-	QAbstractSlider sliderX;
-	QAbstractSlider sliderY;
+	QScrollBar sliderX;
+	QScrollBar sliderY;
 };
