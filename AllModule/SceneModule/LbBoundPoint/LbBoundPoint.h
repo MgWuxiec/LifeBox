@@ -18,6 +18,7 @@ public:
 	LbBoundPoint(QWidget* parent, QPoint pos1, QPoint pos2);
 	int x();
 	int y();
+	QPoint point();
 	void setX(int value);
 	void setY(int value);
 	QScrollBar& getSliderX();

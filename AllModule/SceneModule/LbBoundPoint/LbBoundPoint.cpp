@@ -30,6 +30,11 @@ int LbBoundPoint::y()
 	return sliderY.value() + yMin;
 }
 
+QPoint LbBoundPoint::point()
+{
+	return QPoint(x(), y());
+}
+
 void LbBoundPoint::setX(int value)
 {
 	sliderX.setValue(value - xMin);
@@ -71,6 +76,7 @@ void LbBoundPoint::setRange(QPoint pos1, QPoint pos2)
 
 	sliderX.setMinimum(0);
 	sliderX.setMaximum(xMax - xMin);
+	qDebug() << xMax - xMin;
 	sliderY.setMinimum(0);
 	sliderY.setMaximum(yMax - yMin);
 }
