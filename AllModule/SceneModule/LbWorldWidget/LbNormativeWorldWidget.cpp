@@ -141,43 +141,6 @@ void LbNormativeWorldWidget::paintGrid(QPaintEvent* event)
     temp = temp - pixelWorld_widgetAnchor.point();
     pixleWidget_end = temp;
 
-    //if (pixelWorld_widgetAnchor.x() >= 0) {
-    //    start.setX(-pixelWorld_widgetAnchor.x() % pixelDimensionOfCell.width());
-    //}
-    //else {
-    //    start.setX(-pixelWorld_widgetAnchor.x());
-    //}
-    //if (pixelWorld_widgetAnchor.y() >= 0) {
-    //    start.setY(-pixelWorld_widgetAnchor.y() % pixelDimensionOfCell.height());
-    //}
-    //else {
-    //    start.setY(-pixelWorld_widgetAnchor.y());
-    //}
-
-    //int pixelWorldWidth = pixelDimensionOfCell.width() * worldData->getWidth();
-    //int pixelWorldHeight = pixelDimensionOfCell.height() * worldData->getHeight();
-    //int temp = 0;
-    //if (start.x() + pixelWorldWidth >= this->width()) {
-    //    temp = 0;   //临时变量初始化
-    //    temp = (this->width() - start.x()) % pixelDimensionOfCell.width();
-    //    temp = pixelDimensionOfCell.width() - temp;
-    //    temp = this->width() + temp;
-    //    end.setX(temp);
-    //}
-    //else {
-    //    end.setX(start.x() + pixelWorldWidth);
-    //}
-    //if (start.y() + pixelWorldHeight >= this->height()) {
-    //    temp = 0;   //临时变量初始化
-    //    temp = (this->height() - start.y()) % pixelDimensionOfCell.height();
-    //    temp = pixelDimensionOfCell.height() - temp;
-    //    temp = this->height() + temp;
-    //    end.setY(temp);
-    //}
-    //else {
-    //    end.setY(start.y() + pixelWorldHeight);
-    //}
-
     //3. 开始绘图
     for (int i = pixleWidget_start.x(); i <= pixleWidget_end.x(); i += pixelDimensionOfCell.width()) {
         painter.drawLine(i, pixleWidget_start.y(), i, pixleWidget_end.y());
