@@ -2,7 +2,7 @@
 
 LbNormativeWorldData::LbNormativeWorldData(int width, int height)
 {
-	value = new int[width * height];
+    value = new int[width * height]{0};
 	this->width = width;
     this->height = height;
 }

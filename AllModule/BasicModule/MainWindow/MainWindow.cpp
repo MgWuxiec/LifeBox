@@ -5,7 +5,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui.setupUi(this);
 
-    LbWorldData_Abstract* worldData = new LbNormativeWorldData(256, 256);
+    LbWorldData_Abstract* worldData = new LbNormativeWorldData(32, 32);
+    worldData->setCell(31, 31, 1);
     LbWorldWidget_Abstract* widget = new LbNormativeWorldWidget(this, worldData);
     LbWorldScene_Abstract* scene = new LbNormativeWorldScene(widget);
     setCentralWidget(widget);
