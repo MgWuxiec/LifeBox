@@ -5,14 +5,28 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui.setupUi(this);
 
-    LbWorldData_Abstract* worldData = new LbNormativeWorldData(32, 32);
-    worldData->setCell(31, 31, 1);
-    LbWorldWidget_Abstract* widget = new LbNormativeWorldWidget(this, worldData);
-    LbWorldScene_Abstract* scene = new LbNormativeWorldScene(widget);
-    setCentralWidget(widget);
+    initAll();
 }
 
 MainWindow::~MainWindow()
 {
     
+}
+
+void MainWindow::initAll()
+{
+    worldData = new LbNormativeWorldData(32, 32);
+    initSceneModule();
+}
+
+void MainWindow::initSceneModule()
+{
+    LbWorldWidget_Abstract* widget = new LbNormativeWorldWidget(this, worldData);
+    scene = new LbNormativeWorldScene(widget);
+    setCentralWidget(widget);
+}
+
+void MainWindow::mousePressEvent(QMouseEvent* event)
+{
+
 }

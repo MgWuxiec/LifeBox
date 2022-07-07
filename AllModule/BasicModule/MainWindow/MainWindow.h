@@ -15,6 +15,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private:
+    void initAll();
+    void initSceneModule();
+    void mousePressEvent(QMouseEvent* event) override;
+
+protected:
     Ui::MainWindowClass ui;
+
+    LbWorldData_Abstract* worldData;
+    LbWorldScene_Abstract* scene;
 };

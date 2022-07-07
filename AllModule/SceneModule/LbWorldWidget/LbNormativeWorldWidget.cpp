@@ -11,7 +11,7 @@ LbNormativeWorldWidget::LbNormativeWorldWidget(
       pixelWorld_widgetAnchor(
           this,
           QPoint(-LAYOUT_LEFT_MARGIN, -LAYOUT_TOP_MARGIN), 
-          QPoint(worldData->getWidth() * pixelDimensionOfCell.width() + LAYOUT_RIFHT_MARGIN, 
+          QPoint(worldData->getWidth() * pixelDimensionOfCell.width() + LAYOUT_RIFHT_MARGIN,
                  worldData->getHeight()* pixelDimensionOfCell.height() + LAYOUT_BOTTOM_MARGIN)
       )
 {
@@ -124,7 +124,7 @@ void LbNormativeWorldWidget::mouseMoveEvent(QMouseEvent* event)
         }
         break;
     }
-                       
+
     case Qt::RightButton : {
         if (isSpace == false) {
             QPoint temp = QPoint(event->x(), event->y()) + pixelWorld_widgetAnchor.point();
@@ -217,7 +217,7 @@ void LbNormativeWorldWidget::paintCells(QPaintEvent* event)
     //2. 求出绘图起点和终点
     QPoint pixelWidget_start = revisePoint(pixelWorld_widgetAnchor.point()) -
                                            pixelWorld_widgetAnchor.point(),
-
+         
         pixelWidget_end = revisePoint(pixelWorld_widgetAnchor.point() + QPoint(this->width(), this->height())) -
                                       pixelWorld_widgetAnchor.point();
 

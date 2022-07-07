@@ -110,6 +110,7 @@
     <ClCompile Include="AllModule\SceneModule\LbWorldScene\LbWorldScene_Abstract.cpp" />
     <ClCompile Include="AllModule\SceneModule\LbWorldScene\LbNormativeWorldScene.cpp" />
     <ClCompile Include="AllModule\SceneModule\LbBoundPoint\LbBoundPoint.cpp" />
+    <ClCompile Include="AllModule\CellModule\LbCellVessel.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.ui" />
     <QtUic Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.ui" />
@@ -119,6 +120,7 @@
     <ClInclude Include="AllModule\BasicModule\LbWorldData\LbNormativeWorldData.h" />
     <ClInclude Include="AllModule\SceneModule\LbWorldScene\LbWorldScene_Abstract.h" />
     <ClInclude Include="AllModule\SceneModule\LbWorldScene\LbNormativeWorldScene.h" />
+    <ClInclude Include="AllModule\CellModule\LbCellVessel.h" />
     <QtMoc Include="AllModule\SceneModule\LbBoundPoint\LbBoundPoint.h" />
     <QtMoc Include="AllModule\SceneModule\LbWorldWidget\LbNormativeWorldWidget.h" />
     <QtMoc Include="AllModule\SceneModule\LbWorldWidget\LbWorldWidget_Abstract.h" />

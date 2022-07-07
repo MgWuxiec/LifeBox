@@ -61,6 +61,9 @@
     <ClCompile Include="AllModule\SceneModule\LbBoundPoint\LbBoundPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AllModule\CellModule\LbCellVessel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllModule\BasicModule\LbWorldData\LbWorldData_Abstract.h">
@@ -73,6 +76,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AllModule\SceneModule\LbWorldScene\LbNormativeWorldScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllModule\CellModule\LbCellVessel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
